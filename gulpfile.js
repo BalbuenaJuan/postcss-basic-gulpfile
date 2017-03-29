@@ -9,7 +9,7 @@ var doImport = require("postcss-import");
 var cssnext = require("postcss-cssnext");
 var cssnested  = require("postcss-nested");
 var server = require("gulp-server-livereload");
-var watch = require('gulp-watch');
+var theWatcher = require('gulp-watch');
 
 gulp.task('css', function () {
     var plugins = [
@@ -33,8 +33,8 @@ gulp.task('server', function() {
         }));
 });
 
-gulp.task("watch", function () {
+gulp.task("theWatcher", function () {
     gulp.watch("./src/css/*.css", ["css"]);
 });
 
-gulp.task("default", ["watch", "server"]);
+gulp.task("default", ["theWatcher", "server"]);
